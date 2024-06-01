@@ -69,16 +69,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
         #ORG4G ONLY
-        working-directory: docusaurus
+        working-directory: ./docusaurus
 
       - name: Build website
         run: npm run build
-        working-directory: docusaurus
+        working-directory: ./docusaurus
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docusaurus/build
+          path: ./docusaurus/build
 
         
   deploy:
