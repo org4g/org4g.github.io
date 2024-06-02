@@ -5,6 +5,9 @@ on:
     - cron: '0/10 * * * *'
   workflow_dispatch:
 
+env:
+    notion_auth_token: ${{ secrets.NOTION_TOKEN }}
+    notion_database_id: ${{ secrets.NOTION_DATABASE_ID }}
 jobs:
   import_markdown:
     runs-on: ubuntu-latest
@@ -14,8 +17,8 @@ jobs:
           fetch-depth: 0
       - uses: yucchiy/notion-to-markdown@main
         with:
-          notion_auth_token: ${{ secrets.NOTION_TOKEN }}
-          notion_database_id: ${{ secrets.NOTION_DATABASE_ID }}
+          notion_auth_token: ${{ env.notion_auth_token }}
+          notion_database_id: ${{ env.notion_database_id }}
 
       - name: Push imported markdown files 
         run: |
