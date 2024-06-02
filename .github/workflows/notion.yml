@@ -41,6 +41,8 @@ jobs:
             NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           with:
             # Optional
+            notion_api_key: ${{ env.NOTION_API_KEY }}
+            notion_database_id: ${{ env.NOTION_DATABASE_ID }}            
             output_path: output # default: output
             filename_property: slug # default: title
         # You can check output files count
