@@ -5,28 +5,45 @@ on:
     - cron: '0/10 * * * *'
   workflow_dispatch:
 
-env:
-    notion_auth_token: ${{ secrets.NOTION_TOKEN }}
-    notion_database_id: ${{ secrets.NOTION_DATABASE_ID }}
-jobs:
-  import_markdown:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: yucchiy/notion-to-markdown@main
-        with:
-          notion_auth_token: ${{ env.notion_auth_token }}
-          notion_database_id: ${{ env.notion_database_id }}
+# env:
+#     notion_auth_token: ${{ secrets.NOTION_TOKEN }}
+#     notion_database_id: ${{ secrets.NOTION_DATABASE_ID }}
+# jobs:
+#   import_markdown:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 0
+#       - uses: yucchiy/notion-to-markdown@main
+#         with:
+#           notion_auth_token: ${{ env.notion_auth_token }}
+#           notion_database_id: ${{ env.notion_database_id }}
 
-      - name: Push imported markdown files 
-        run: |
-          git config --local user.email ""
-          git config --local user.name "github-actions[bot]"
-          git add ./output
-          git commit -m "Import files from notion database"
-      - uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.ORG4G_SECRET }}
-          branch: ${{ github.ref }}
+#       - name: Push imported markdown files 
+#         run: |
+#           git config --local user.email ""
+#           git config --local user.name "github-actions[bot]"
+#           git add ./output
+#           git commit -m "Import files from notion database"
+#       - uses: ad-m/github-push-action@master
+#         with:
+#           github_token: ${{ secrets.ORG4G_SECRET }}
+#           branch: ${{ github.ref }}
+jobs:
+    import:
+      runs-on: ubuntu-latest
+      steps:
+        - id: import
+          uses: ega4432/notion-to-markdown-action@v0
+          env:
+            NOTION_API_KEY: ${{ secrets.NOTION_TOKEN }}
+            NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          with:
+            # Optional
+            output_path: output # default: output
+            filename_property: slug # default: title
+        # You can check output files count
+        - run: | 
+            echo "Exported count: ${{ steps.import.outputs.files_count }}"
+            
