@@ -1,8 +1,8 @@
 name: Import Notion 
 
 on:
-  schedule:
-    - cron: '0/10 * * * *'
+  # schedule:
+  #   - cron: '0/10 * * * *'
   workflow_dispatch:
 
 # env:
@@ -40,9 +40,7 @@ jobs:
             NOTION_API_KEY: ${{ secrets.NOTION_TOKEN }}
             NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           with:
-            # Optional
-            notion_api_key: ${{ env.NOTION_API_KEY }}
-            notion_database_id: ${{ env.NOTION_DATABASE_ID }}            
+            # Optional         
             output_path: output # default: output
             filename_property: slug # default: title
         # You can check output files count
