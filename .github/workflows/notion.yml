@@ -47,11 +47,15 @@ jobs:
         - run: | 
             echo "Exported count: ${{ steps.import.outputs.files_count }}"
             
-        - name: Push imported markdown files 
-          run: |           
-            git add ./output
-            git commit -m "Import files from notion database"
-        - uses: ad-m/github-push-action@master
-          with:
-            github_token: ${{ secrets.ORG4G_SECRET }}
-            branch: ${{ github.ref }} 
+        - name: Copy files to repository
+          run: |
+            echo "$(pwd)"
+            cp output/* ./notion            
+        # - name: Push imported markdown files 
+        #   run: |           
+        #     git add ./output
+        #     git commit -m "Import files from notion database"
+        # - uses: ad-m/github-push-action@master
+        #   with:
+        #     github_token: ${{ secrets.ORG4G_SECRET }}
+        #     branch: ${{ github.ref }} 
