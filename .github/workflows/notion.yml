@@ -41,18 +41,20 @@ jobs:
             NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           with:
             # Optional         
-            output_path: ./output # default: output
+            output_path: output # default: output
             filename_property: title # default: title
         # You can check output files count
         - run: | 
             echo "Exported count: ${{ steps.import.outputs.files_count }}"
             
-        - name: Copy files to repository
+        - name: Commit and push changes
           run: |
-            echo "$(pwd)"
-            cp output/* ./notion            
-        # - name: Push imported markdown files 
-        #   run: |           
+            git config --global user.name 'GitHub Actions'
+            git config --global user.email 'github-actions@github.com'
+            git add output
+            git commit -m "Add generated files"
+            git push
+            
         #     git add ./output
         #     git commit -m "Import files from notion database"
         # - uses: ad-m/github-push-action@master
