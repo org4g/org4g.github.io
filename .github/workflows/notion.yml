@@ -42,7 +42,7 @@ jobs:
           with:
             # Optional         
             output_path: output # default: output
-            filename_property: slug # default: title
+            filename_property: title # default: title
         # You can check output files count
         - run: | 
             echo "Exported count: ${{ steps.import.outputs.files_count }}"
