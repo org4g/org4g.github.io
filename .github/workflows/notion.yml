@@ -48,9 +48,7 @@ jobs:
             echo "Exported count: ${{ steps.import.outputs.files_count }}"
             
         - name: Push imported markdown files 
-          run: |
-            git config --local user.email "tech@dataforgood.fr"
-            git config --local user.name "d4gtech"
+          run: |           
             git add ./output
             git commit -m "Import files from notion database"
         - uses: ad-m/github-push-action@master
