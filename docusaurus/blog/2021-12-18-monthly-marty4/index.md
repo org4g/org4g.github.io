@@ -59,7 +59,7 @@ Les 3 projets présentés pour prendre une dose d'inspiration sont à partir de 
 
 ### Féminisme Populaire
 
-<https://www.feminismepopulaire.com/>
+https://www.feminismepopulaire.com/
 
 Bouchera Azzouz est venue présenter l'association et sa lutte pour l'émancipation des femmes des quartiers populaires, et son objectif de digitaliser cette lutte pour la passer à l'échelle à l'aide d'une plateforme. Elle recherche des bénévoles pour l'aider à :
 
@@ -70,7 +70,7 @@ Si le sujet vous intéresse on vous recommande la trilogie de films réalisé pa
 
 ### Carbon4Finance
 
-<https://www.carbon4finance.com/>
+https://www.carbon4finance.com/
 
 Lou Welgryn (ancienne présidente de Data For Good) est venue nous présenter son travail chez Carbon4Finance et une des manières les plus impactantes pour l'environnement d'utiliser la Data : analyser les performances environnementales des entreprises pour flécher les investissements financiers.
 
@@ -82,7 +82,7 @@ Important de retenir cette visualisation pour comprendre l'importance de la mesu
 
 ### ElectricityMap
 
-<https://electricitymap.org/>
+https://electricitymap.org/
 
 Olivier Corradi, CEO d'ElectricityMap est venu nous présenter l'immense projet Open Data ElectricityMap permettant d'obtenir une intensité carbone du mix électrique par pays. Projet qui est aujourd'hui utilisé par de multiples applications pour optimiser et éviter des émissions de l'électrification, par exemple Google qui utilise les données d'ElectricityMap pour mesurer et réduire l'empreinte carbone sur les services Google Cloud.
 
