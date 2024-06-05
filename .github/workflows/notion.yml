@@ -44,20 +44,20 @@ jobs:
             NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           with:
             # Optional         
-            output_path: output # default: output
+            output_path: ./output # default: output
             filename_property: title # default: title
         # You can check output files count
         - run: | 
             echo "Exported count: ${{ steps.import.outputs.files_count }}"
-        - name: Copy files to repository
-          run: |
-            mkdir -p ./notion
-            cp -r output/* ./notion/            
+        # - name: Copy files to repository
+        #   run: |
+        #     mkdir -p ./notion
+        #     cp -r output/* ./notion/            
         - name: Commit and push changes
           run: |
             git config --global user.name 'GitHub Actions'
             git config --global user.email 'github-actions@github.com'
-            git add ./notion
+            git add ./output
             git commit -m "Add generated files"
             git push
             
