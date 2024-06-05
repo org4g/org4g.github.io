@@ -43,7 +43,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          yarn install --frozen-lockfile
+          yarn install
           yarn build
         working-directory: ./docusaurus
 
