@@ -5,8 +5,8 @@ import styles from './HomepageFeatures.module.css';
 const FeatureList = [
   {
     title: 'Notre vision',
-    src: require('../../static/img/pillar1.png').default,
-    Svg: require('../../static/img/pillar1.svg').default,
+    src: require('@site/static/img/pillar1.png').default,
+    Svg: require('@site/static/img/pillar1.svg').default,
     description: (
       <>
         <p style={{"text-align":"left"}}>Les technologies numériques sont incroyablement puissantes et redéfinissent le fonctionnement de notre société. Pour les acteurs qui œuvrent pour l'intérêt général, la technologie peut parfois être un levier démutiplicateur d'impacts positifs, cependant et malheureusement ces acteurs n'ont souvent pas les ressources technologiques ou humaines pour accélérer leur action citoyenne. <b>Data for Good existe pour rétablir l'équilibre.</b></p>
@@ -16,8 +16,8 @@ const FeatureList = [
   },
   {
     title: 'Notre mission',
-    src: require('../../static/img/pillar2.png').default,
-    Svg: require('../../static/img/pillar2.svg').default,
+    src: require('@site/static/img/pillar2.png').default,
+    Svg: require('@site/static/img/pillar2.svg').default,
     description: (
       <>
         <p style={{"text-align":"left"}}>Chaque jour, de nouveaux défis sont à relever en matière de <b>santé, d'environnement, d'inclusion sociale, d'éducation ou de citoyenneté</b>. Et chaque jour, de nouvelles idées germent et de plus en plus de citoyens veulent s'engager.</p>
@@ -28,8 +28,8 @@ const FeatureList = [
   },
   {
     title: 'Nos valeurs',
-    src: require('../../static/img/pillar3.png').default,
-    Svg: require('../../static/img/pillar3.svg').default,
+    src: require('@site/static/img/pillar3.png').default,
+    Svg: require('@site/static/img/pillar3.svg').default,
     description: (
       <>
         <ul style={{"text-align":"left"}}>
